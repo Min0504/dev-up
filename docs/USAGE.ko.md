@@ -21,7 +21,7 @@
 요구사항: **Node.js ≥ 18.17**. tmux / Docker / fzf는 선택 사항이며, 없으면 해당 기능만 자동 비활성화됩니다.
 
 ```bash
-npm install -g @minseokchae/dev-up   # dev, devup, devdown, devrestart, devstatus, devlogs 설치
+npm install -g @min0504/dev-up   # dev, devup, devdown, devrestart, devstatus, devlogs 설치
 ```
 
 소스에서 설치:
@@ -51,7 +51,7 @@ echo 'eval "$(dev completion bash)"' >> ~/.bashrc
 제거:
 
 ```bash
-npm rm -g @minseokchae/dev-up
+npm rm -g @min0504/dev-up
 rm -rf ~/.devup     # 설정·상태·로그까지 지우려면
 ```
 
@@ -278,7 +278,7 @@ devup myapp -a       # 올리고 바로 attach
 tar czf devup-config.tgz -C ~ .devup/projects
 
 # 새 Mac
-npm install -g @minseokchae/dev-up
+npm install -g @min0504/dev-up
 tar xzf devup-config.tgz -C ~
 dev doctor           # 부족한 도구 확인
 ```

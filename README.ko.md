@@ -29,7 +29,7 @@ devdown myapp    # devup이 띄운 것만 깨끗하게 종료
 ## 설치
 
 ```bash
-npm install -g @minseokchae/dev-up   # dev, devup, devdown, devrestart, devstatus, devlogs 설치
+npm install -g @min0504/dev-up   # dev, devup, devdown, devrestart, devstatus, devlogs 설치
 ```
 
 소스에서 설치:
@@ -52,7 +52,7 @@ dev doctor      # 환경 점검 + 문제 해결법 출력
 echo 'eval "$(dev completion zsh)"' >> ~/.zshrc
 ```
 
-제거: `npm rm -g @minseokchae/dev-up`
+제거: `npm rm -g @min0504/dev-up`
 
 ## 초기 설정
 
@@ -192,7 +192,7 @@ myapp (session)
 tar czf devup-config.tgz -C ~ .devup/projects
 
 # 새 Mac
-npm install -g @minseokchae/dev-up
+npm install -g @min0504/dev-up
 tar xzf devup-config.tgz -C ~
 dev doctor          # 부족한 도구 확인
 devup <project>     # root 경로가 다르면 yaml에서 ~ 기준으로 수정

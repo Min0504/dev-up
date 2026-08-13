@@ -29,7 +29,7 @@ devdown myapp    # cleanly stop only what devup started
 ## Install
 
 ```bash
-npm install -g @minseokchae/dev-up   # installs dev, devup, devdown, devrestart, devstatus, devlogs
+npm install -g @min0504/dev-up   # installs dev, devup, devdown, devrestart, devstatus, devlogs
 ```
 
 Or from source:
@@ -52,7 +52,7 @@ Shell completion (including project names):
 echo 'eval "$(dev completion zsh)"' >> ~/.zshrc
 ```
 
-Uninstall: `npm rm -g @minseokchae/dev-up`
+Uninstall: `npm rm -g @min0504/dev-up`
 
 ## Getting started
 
@@ -192,7 +192,7 @@ All config lives in `~/.devup/projects/*.yaml` (or each repo's `devup.yaml`).
 tar czf devup-config.tgz -C ~ .devup/projects
 
 # new Mac
-npm install -g @minseokchae/dev-up
+npm install -g @min0504/dev-up
 tar xzf devup-config.tgz -C ~
 dev doctor          # see what tools are missing
 devup <project>     # if the root moved, adjust the yaml (~-based paths usually just work)

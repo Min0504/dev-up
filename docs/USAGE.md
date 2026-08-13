@@ -21,7 +21,7 @@ New here? Start with the quick start in the [README](../README.md).
 Requirements: **Node.js ≥ 18.17**. tmux / Docker / fzf are optional — a missing tool only disables its own feature.
 
 ```bash
-npm install -g @minseokchae/dev-up   # installs dev, devup, devdown, devrestart, devstatus, devlogs
+npm install -g @min0504/dev-up   # installs dev, devup, devdown, devrestart, devstatus, devlogs
 ```
 
 Or from source:
@@ -51,7 +51,7 @@ echo 'eval "$(dev completion bash)"' >> ~/.bashrc
 Uninstall:
 
 ```bash
-npm rm -g @minseokchae/dev-up
+npm rm -g @min0504/dev-up
 rm -rf ~/.devup     # also removes configs, state, and logs
 ```
 
@@ -278,7 +278,7 @@ devup myapp -a       # bring it up and attach right away
 tar czf devup-config.tgz -C ~ .devup/projects
 
 # new Mac
-npm install -g @minseokchae/dev-up
+npm install -g @min0504/dev-up
 tar xzf devup-config.tgz -C ~
 dev doctor           # see which tools are missing
 ```
