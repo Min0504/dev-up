@@ -1,0 +1,40 @@
+# Full-stack example: postgres + redis (docker) → backend (command) → expo (tmux)
+# install: cp examples/fullstack.yaml ~/.devup/projects/myapp.yaml
+name: myapp
+root: ~/dev/myapp
+
+services:
+  postgres:
+    type: docker
+    compose_file: backend/docker-compose.yml
+    compose_service: postgres
+    healthcheck: postgres          # pg_isready inside the container (fallback: tcp :5432)
+
+  redis:
+    type: docker
+    compose_file: backend/docker-compose.yml
+    compose_service: redis
+    healthcheck: redis             # redis-cli ping inside the container (fallback: tcp :6379)
+
+  backend:
+    type: command
+    cwd: backend
+    command: npm run start:dev
+    depends_on: [postgres, redis]
+    healthcheck:
+      type: tcp
+      port: 3000
+      timeout: 120                 # first boot with a watcher can be slow
+
+  expo:
+    type: command
+    command: npm start
+    tmux: true                     # interactive keys (i / a / r) work inside the tmux window
+    depends_on: [backend]
+    healthcheck:
+      type: tcp
+      port: 8081
+      timeout: 120
+
+tmux:
+  enabled: true

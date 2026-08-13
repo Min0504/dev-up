@@ -1,0 +1,61 @@
+{
+  "name": "@minseokchae/dev-up",
+  "version": "0.1.1",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Personal dev environment orchestrator: bring a whole project dev stack up/down with one command",
+  "author": "Min0504",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Min0504/dev-up.git"
+  },
+  "homepage": "https://github.com/Min0504/dev-up#readme",
+  "bugs": "https://github.com/Min0504/dev-up/issues",
+  "keywords": [
+    "cli",
+    "developer-tools",
+    "dev-environment",
+    "orchestrator",
+    "docker",
+    "tmux",
+    "healthcheck",
+    "process-manager",
+    "macos"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "files": [
+    "bin",
+    "dist/src",
+    "docs",
+    "examples",
+    "README.ko.md"
+  ],
+  "bin": {
+    "dev": "bin/dev.js",
+    "devup": "bin/devup.js",
+    "devdown": "bin/devdown.js",
+    "devrestart": "bin/devrestart.js",
+    "devstatus": "bin/devstatus.js",
+    "devlogs": "bin/devlogs.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "test:unit": "npm run build && node --test dist/test/config.test.js dist/test/proc.test.js dist/test/state.test.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.11",
+    "typescript": "^5.8.3"
+  }
+}
